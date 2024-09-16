@@ -10,7 +10,6 @@ export async function POST(req:Request){
         if(!userId){
             return new NextResponse("Unauthorized",{status:401})
         }
-        console.log(userId);
         
         const course = await db.course.create({
             data:{
