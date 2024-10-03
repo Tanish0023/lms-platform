@@ -86,3 +86,5 @@ body,
     @apply bg-background text-foreground;
   }
 }
+
+/* @import "~@uploadthing/react/style.css "; */

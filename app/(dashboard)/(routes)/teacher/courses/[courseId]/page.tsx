@@ -8,6 +8,8 @@ import { db } from "@/lib/db";
 // from _components
 import { TitleForm } from "./_components/title-form";
 import { DescriptionForm } from "./_components/description-form";
+import { ImageForm } from "./_components/image-form";
+import Home from "./test";
 
 const CourseIdPage = async ({params}:{
     params:{courseId:string}
@@ -77,6 +79,11 @@ const CourseIdPage = async ({params}:{
                         initialData={course}
                         courseId={course.id}
                     />
+                    <ImageForm
+                        initialData={course}
+                        courseId={course.id}
+                    />
+                    <Home/>
                 </div>
             </div>
         </div>
