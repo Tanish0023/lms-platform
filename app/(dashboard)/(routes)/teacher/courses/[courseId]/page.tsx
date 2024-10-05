@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
-import { LayoutDashboard } from "lucide-react";
+import { LayoutDashboard, ListChecks } from "lucide-react";
 
 import { IconBadge } from "@/components/icon-badge";
 import { db } from "@/lib/db";
@@ -9,7 +9,7 @@ import { db } from "@/lib/db";
 import { TitleForm } from "./_components/title-form";
 import { DescriptionForm } from "./_components/description-form";
 import { ImageForm } from "./_components/image-form";
-import Home from "./test";
+import { CategoryForm } from "./_components/category-form";
 
 const CourseIdPage = async ({params}:{
     params:{courseId:string}
@@ -30,6 +30,12 @@ const CourseIdPage = async ({params}:{
         where:{
             id:params.courseId
         }
+    })
+
+    const categories = await db.category.findMany({
+        orderBy:{
+            name: "asc",
+        },
     })
 
     if(!course){
@@ -83,7 +89,29 @@ const CourseIdPage = async ({params}:{
                         initialData={course}
                         courseId={course.id}
                     />
-                    <Home/>
+                    <CategoryForm
+                        initialData={course}
+                        courseId={course.id}
+                        options={categories.map((category)=>(
+                            {
+                                label: category.name,
+                                value: category.id
+                            }
+                        ))}
+                    />
+                </div>
+                <div className="space-y-6">
+                    <div>
+                        <div className="flex items-center gap-x-2">
+                            <IconBadge icon={ListChecks}/>
+                        </div>
+                        <h2 className="text-xl">
+                            Course Chapter
+                        </h2>
+                    </div>
+                    <div>
+                        TODO: Chapters
+                    </div>
                 </div>
             </div>
         </div>
