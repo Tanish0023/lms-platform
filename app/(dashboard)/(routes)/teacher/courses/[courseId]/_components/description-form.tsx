@@ -74,7 +74,7 @@ export const DescriptionForm = ({initialData, courseId}:DescriptionFormProps) =>
                     <>Cancel</>
                 ) : (
                     <>
-                        <Pencil className="h-4 w-4 mr-2"/>
+                        <Pencil className="h-4 w-4 mr-2 "/>
                         Edit Description
                     </>
                 )}
@@ -84,7 +84,7 @@ export const DescriptionForm = ({initialData, courseId}:DescriptionFormProps) =>
 
             {!isEditing && (
                 <p className={cn(
-                    "text-sm mt-2",
+                    "text-sm mt-2 line-clamp-1",
                     !initialData.description && "text-slate-500 italic"
                 )}>
                     {initialData.description || "No Description"}
