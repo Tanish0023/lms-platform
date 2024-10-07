@@ -7,6 +7,7 @@ import { ToastProvider } from '@/components/providers/toaster-provider'
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "@/app/api/uploadthing/core";
+import { ConfettiProvider } from '@/components/providers/confetti-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,6 +28,7 @@ export default function RootLayout({
         <NextSSRPlugin
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
+          <ConfettiProvider/>
           <ToastProvider/>
           {children}
         </body>
