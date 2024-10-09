@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
-import { CircleDollarSign, File, LayoutDashboard, ListChecks } from "lucide-react";
+import { ArrowLeft, CircleDollarSign, File, LayoutDashboard, ListChecks } from "lucide-react";
 
 import { IconBadge } from "@/components/icon-badge";
 import { db } from "@/lib/db";
@@ -15,6 +15,7 @@ import { AttachmentForm } from "./_components/attachment-form";
 import { ChaptersForm } from "./_components/chapters-form";
 import { Banner } from "@/components/banner";
 import { Actions } from "./_components/actions";
+import Link from "next/link";
 
 const CourseIdPage = async ({params}:{
     params:{courseId:string}
@@ -87,7 +88,12 @@ const CourseIdPage = async ({params}:{
                 />
             )}
             <div className="p-6">
+                <Link href={`/teacher/courses`} className="flex items-center text-sm hover:opacity-75 transition mb-6">
+                    <ArrowLeft className="h-4 w-4 mr-2"/>
+                    Back to courses page
+                </Link>
                 <div className="flex items-center justify-between">
+                    
                     <div className="flex flex-col gap-y-2">
                         <h1 className="text-2xl font-medium">
                             Course Setup
