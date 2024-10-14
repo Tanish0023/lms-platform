@@ -9,8 +9,6 @@ export const getProgress = async (
             where:{
                 courseId: courseId,
                 isPublished: true
-                
-
             },
             select:{
                 id:true

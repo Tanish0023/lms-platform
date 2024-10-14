@@ -14,7 +14,7 @@ export const NavbarRoutes = ()=>{
     const isTeacherPage = pathName?.startsWith("/teacher");
 
     // Used to display chapters in the sidebar
-    const isPlayerPage = pathName?.includes("/chapter")
+    const isCoursePage = pathName?.includes("/courses")
 
     const isSearchPage = pathName === "/search"
 
@@ -26,7 +26,7 @@ export const NavbarRoutes = ()=>{
                 </div>
             )}
             <div className="flex gap-x-2 ml-auto">
-                {isTeacherPage || isPlayerPage ? (
+                {isTeacherPage || isCoursePage ? (
                     <Link href="/">
                         <Button size="sm" variant="ghost">
                             <LogOut className="h-4 w-4 mr-2"/>
