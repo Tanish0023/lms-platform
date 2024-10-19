@@ -9,11 +9,10 @@ module.exports = withUt({
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    theme: {
-      screens: {
-        md: "840px",
-      },
+    screens: {
+      md: "840px",
     },
+
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
