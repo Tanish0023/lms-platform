@@ -1,0 +1,15 @@
+LMS Platform Technologies
+
+NextJS
+ReactJs
+shadcn/ui - for ui
+TypeScript
+Tailwind
+clerk - for authentication
+lucide-react - for LOGOS
+axios for https requests
+MongoDB - as database
+toast - for popups
+uploadthing - for image upload
+Mux - video PLayer
+Stripe - Payment gateway
